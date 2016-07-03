@@ -41,7 +41,8 @@ create_wb <- function(filename="Test",
                       overwrite_existing=TRUE){
 
   time <- time_stamp()
-  filename <- paste0(filename, "_", time, ".xlsx")
+  # filename <- paste0(filename, "_", time, ".xlsx")
+  filename <- paste0(filename, ".xlsx")
   num_tabs <- length(dataframe_list)
   wb <- NULL
   wb <- createWorkbook(filename)

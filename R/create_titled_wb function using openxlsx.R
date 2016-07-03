@@ -1,6 +1,6 @@
 #' create_titled_wb - Create a Workbook with Multiple Titled Worksheets Using 'openxlsx'
 #' @keywords xlsx
-#' @param filename The worksheet name you would like.  Will be appended with a date stamp.
+#' @param filename The worksheet name you would like, including .xlsx file extension.
 #' @param dataframe_list A list of dataframes (without quotes) created outside the function call.
 #' @param titles A vector of worksheet titles, 1 for each worksheet tab.
 #' @param tabnames A vector of tabnames, current maximum # tabs supported = 8.
@@ -44,7 +44,7 @@ create_titled_wb <- function(filename="Test",
                              overwrite_existing=TRUE){
 
   time <- time_stamp()
-  filename <- paste0(filename, "_", time, ".xlsx")
+  # filename <- paste0(filename, "_", time, ".xlsx")
   num_tabs <- length(dataframe_list)
   wb <- NULL
   wb <- createWorkbook(filename)

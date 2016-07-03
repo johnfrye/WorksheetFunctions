@@ -11,7 +11,7 @@ create_titled_wb(filename = "Test", dataframe_list,
   overwrite_existing = TRUE)
 }
 \arguments{
-\item{filename}{The worksheet name you would like.  Will be appended with a date stamp.}
+\item{filename}{The worksheet name you would like, including .xlsx file extension.}
 
 \item{dataframe_list}{A list of dataframes (without quotes) created outside the function call.}
 
