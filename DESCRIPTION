@@ -1,14 +1,16 @@
 Package: WorksheetFunctions
-Title: Easily Create Formatted Multi-Worksheet Workbooks
+Title: Easily Create Formatted Multi-Worksheet Excel Workbooks
 Version: 0.0.0.9001
-Authors@R: person("John", "Frye", email = "john.frye@savemart.com", role = c("aut", "cre"))
+Authors@R: person("John", "Frye", email = "john.frye@gmail.com", role = c("aut", "cre"))
 Description: Easily Create Formatted Multi-Worksheet Workbooks.  Functions facilitate creating worksheets with titles or alternatively as basic tables.
 Depends:
-    R (>= 3.2.4)
-License: Proprietary. Do not distribute outside of Save Mart Supermarkets
+    R (>= 3.2.3)
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 5.0.1
+RoxygenNote: 6.1.1
+URL: https://github.com/johnfrye/WorksheetFunctions
 Imports: openxlsx,
     RColorBrewer,
-    smutilities
+    fryeutilities,
+    pkgload

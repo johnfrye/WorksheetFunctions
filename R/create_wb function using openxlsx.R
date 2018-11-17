@@ -31,7 +31,7 @@
 #'           overwrite_existing=TRUE)
 #' @export
 
-create_wb <- function(filename="Test",
+create_wb <- function(filename = "Test",
                       dataframe_list,
                       tabnames=LETTERS[1:length(dataframe_list)],
                       format_column_labels=TRUE,
@@ -41,14 +41,14 @@ create_wb <- function(filename="Test",
                       overwrite_existing=TRUE){
 
   time <- time_stamp()
-  # filename <- paste0(filename, "_", time, ".xlsx")
-  filename <- paste0(filename, ".xlsx")
+  filename <- paste0(filename, "_", time, ".xlsx")
   num_tabs <- length(dataframe_list)
   wb <- NULL
-  wb <- createWorkbook(filename)
-
+  wb <- openxlsx::createWorkbook(filename)
+  palette_size <- max(num_tabs, 3)
   # max colors in this palette is 8.  Could recycle if need more tabs
-  tabcolors <- RColorBrewer::brewer.pal(num_tabs, "Set2")
+  tabcolors <- RColorBrewer::brewer.pal(palette_size, "Set3")
+  tabcolors <- tabcolors[1:num_tabs]
 
   # define default header style
   hs1 <- createStyle(fontSize = 12, fgFill = "#4F81BD", halign = "center",
@@ -65,8 +65,9 @@ create_wb <- function(filename="Test",
 
       # format column labels (names)
       if(format_column_labels==TRUE){
-        names(dt) <- gsub("\\.", " ", names(dt))
-        names(dt) <- gsub("\\_", " ", names(dt))
+        # names(dt) <- gsub("\\.", " ", names(dt))
+        # names(dt) <- gsub("\\_", " ", names(dt))
+        names(dt) <- str_replace_all(names(dt), "[[:punct:]]", " ")
         names(dt) <- stringi::stri_trans_totitle(names(dt))
       }
 
@@ -90,6 +91,6 @@ create_wb <- function(filename="Test",
   if(open_wb) openXL(wb)
 
   # save
-  saveWorkbook(wb, file = file.path(output_path, filename),
+  openxlsx::saveWorkbook(wb, file = file.path(output_path, filename),
                overwrite = overwrite_existing)
 }

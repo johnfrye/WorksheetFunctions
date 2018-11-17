@@ -15,4 +15,3 @@ update_worksheetfunctions()
 }
 \keyword{WorksheetFunctions,}
 \keyword{xlsx}
-

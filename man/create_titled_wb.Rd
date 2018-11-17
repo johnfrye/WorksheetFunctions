@@ -6,9 +6,9 @@
 \usage{
 create_titled_wb(filename = "Test", dataframe_list,
   titles = LETTERS[1:length(dataframe_list)],
-  tabnames = LETTERS[1:length(dataframe_list)], format_column_labels = TRUE,
-  ws_type = "table", output_path = getwd(), open_wb = TRUE,
-  overwrite_existing = TRUE)
+  tabnames = LETTERS[1:length(dataframe_list)],
+  format_column_labels = TRUE, ws_type = "table",
+  output_path = getwd(), open_wb = TRUE, overwrite_existing = TRUE)
 }
 \arguments{
 \item{filename}{The worksheet name you would like, including .xlsx file extension.}
@@ -55,4 +55,3 @@ create_titled_wb(filename = "Test_New",
                  overwrite_existing = TRUE)
 }
 \keyword{xlsx}
-

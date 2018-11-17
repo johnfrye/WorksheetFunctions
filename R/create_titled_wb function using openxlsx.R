@@ -44,13 +44,13 @@ create_titled_wb <- function(filename="Test",
                              overwrite_existing=TRUE){
 
   time <- time_stamp()
-  # filename <- paste0(filename, "_", time, ".xlsx")
+  filename <- paste0(filename, "_", time, ".xlsx")
   num_tabs <- length(dataframe_list)
   wb <- NULL
   wb <- createWorkbook(filename)
 
   # max colors in this palette is 8.  Could recycle if need more tabs
-  tabcolors <- RColorBrewer::brewer.pal(num_tabs, "Set2")
+  tabcolors <- RColorBrewer::brewer.pal(num_tabs, "Set3")
 
   # define default header style
   hs1 <- createStyle(fontSize = 12, fgFill = "#4F81BD", halign = "center",

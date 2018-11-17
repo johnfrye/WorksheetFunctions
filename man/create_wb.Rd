@@ -5,9 +5,9 @@
 \title{create_wb - Create a Workbook with Multiple Worksheets Using 'openxlsx'}
 \usage{
 create_wb(filename = "Test", dataframe_list,
-  tabnames = LETTERS[1:length(dataframe_list)], format_column_labels = TRUE,
-  ws_type = "table", output_path = getwd(), open_wb = TRUE,
-  overwrite_existing = TRUE)
+  tabnames = LETTERS[1:length(dataframe_list)],
+  format_column_labels = TRUE, ws_type = "table",
+  output_path = getwd(), open_wb = TRUE, overwrite_existing = TRUE)
 }
 \arguments{
 \item{filename}{The worksheet name you would like.  Will be appended with a date stamp.}
@@ -51,4 +51,3 @@ create_wb(filename = "Test_New",
           overwrite_existing=TRUE)
 }
 \keyword{xlsx}
-

@@ -7,7 +7,7 @@
 update_worksheetfunctions <- function() {
   rm(list=ls())
   library("devtools")
-  unload(inst("WorksheetFunctions"))
+  unload(pkgload::inst("WorksheetFunctions"))
   wd.orig <- getwd()
   (wd <- path.expand("~"))
   wd
